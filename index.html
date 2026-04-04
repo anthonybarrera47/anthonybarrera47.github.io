@@ -21,11 +21,12 @@
                 <span></span>
             </div>
             <div class="nav-links">
-                <a href="#hero" class="nav-link">Inicio</a>
-                <a href="#sobre-mi" class="nav-link">Sobre Mí</a>
-                <a href="#especialidades" class="nav-link">Especialidades</a>
-                <a href="#proyectos" class="nav-link">Proyectos</a>
-                <a href="#contacto" class="nav-link">Contacto</a>
+                <a href="#hero" class="nav-link" data-i18n="nav.inicio">Inicio</a>
+                <a href="#enygmalab" class="nav-link" data-i18n="nav.enygmalab">EnygmaLab</a>
+                <a href="#sobre-mi" class="nav-link" data-i18n="nav.sobreMi">Sobre Mí</a>
+                <a href="#especialidades" class="nav-link" data-i18n="nav.especialidades">Especialidades</a>
+                <a href="#proyectos" class="nav-link" data-i18n="nav.proyectos">Proyectos</a>
+                <a href="#contacto" class="nav-link" data-i18n="nav.contacto">Contacto</a>
                 <div class="lang-switch">
                     <span class="lang-option active" data-lang="es">ES</span>
                     <span class="lang-option" data-lang="en">EN</span>
@@ -34,93 +35,206 @@
         </nav>
     </header>
 
+    <!-- Hero -->
     <section id="hero" class="hero">
         <div class="hero-content container">
-            <div class="profile-image fade-in">
-                <img src="resources/FotoPerfil.jpg" alt="Anthony Barrera">
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <div class="hero-kicker fade-in" data-i18n="hero.kicker">Anthony Barrera</div>
+                    <h1 class="fade-in">Anthony Manuel<br>Barrera Hidalgo</h1>
+                    <p class="lead fade-in" data-i18n="hero.lead">CTO at EnygmaLab | QA Automation & Software Development</p>
+                    <p class="subtitle fade-in" data-i18n-html="hero.subtitle">
+                        Fundador y CTO de <a href="https://enygmalab.com" target="_blank" style="color:inherit;font-weight:600;">EnygmaLab</a> — empresa de staff augmentation y soluciones de IA con ingenieros nearshore elite de LatAm. Lidero equipos multidisciplinarios de QA y desarrollo, automatizo procesos de testing y construyo software confiable a través de calidad, liderazgo y enseñanza.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="https://enygmalab.com" target="_blank" class="btn btn-primary">
+                            <i class="fas fa-building"></i>
+                            <span data-i18n="hero.ctaPrimary">EnygmaLab</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/inganthonybarrera/" target="_blank" class="btn btn-secondary">
+                            <i class="fab fa-linkedin"></i>
+                            <span data-i18n="hero.ctaSecondary">Ver LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-aside fade-in">
+                    <div class="hero-portrait-frame">
+                        <div class="profile-image">
+                            <img src="resources/FotoPerfil.jpg" alt="Anthony Barrera">
+                        </div>
+                    </div>
+                    <div class="hero-signal-card">
+                        <div class="hero-signal-item">
+                            <span class="hero-signal-value">6+</span>
+                            <span class="hero-signal-label" data-i18n="stats.experience">Años de Experiencia</span>
+                        </div>
+                        <div class="hero-signal-item">
+                            <span class="hero-signal-value">Top 3%</span>
+                            <span class="hero-signal-label" data-i18n="hero.signalTalent">Nearshore Talent</span>
+                        </div>
+                        <div class="hero-signal-item">
+                            <span class="hero-signal-value">48h</span>
+                            <span class="hero-signal-label" data-i18n="hero.signalMatching">Matching</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h1 class="fade-in">Anthony Manuel<br>Barrera Hidalgo</h1>
-            <p class="lead fade-in">CTO at EnygmaLab | QA Automation & Software Development</p>
-            <p class="subtitle fade-in">Fundador y CTO de <a href="https://enygmalab.com" target="_blank" style="color:inherit;font-weight:600;">EnygmaLab</a> — empresa de staff augmentation y soluciones de IA con ingenieros nearshore elite de LatAm. Lidero equipos multidisciplinarios de QA y desarrollo, automatizo procesos de testing y construyo software confiable a través de calidad, liderazgo y enseñanza.</p>
-            <div class="hero-cta">
-                <a href="https://enygmalab.com" target="_blank" class="btn btn-primary">
+        </div>
+    </section>
+
+    <!-- EnygmaLab Section -->
+    <section id="enygmalab" class="section enygmalab-section">
+        <div class="container">
+            <div class="enygmalab-header fade-in">
+                <div class="enygmalab-logo-badge">
                     <i class="fas fa-building"></i>
-                    EnygmaLab
-                </a>
-                <a href="https://www.linkedin.com/in/inganthonybarrera/" target="_blank" class="btn btn-secondary">
-                    <i class="fab fa-linkedin"></i>
-                    Ver LinkedIn
+                </div>
+                <h2 class="section-title" data-i18n="enygmalab.title">EnygmaLab</h2>
+                <p class="enygmalab-tagline" data-i18n="enygmalab.tagline">Staff Augmentation & Soluciones de IA</p>
+                <p class="enygmalab-description" data-i18n="enygmalab.description">
+                    Conectamos empresas con ingenieros nearshore elite de LatAm. Matching garantizado en 48 horas con talento del top 3%, perfiles alineados con zonas horarias EST/PST y onboarding ágil.
+                </p>
+            </div>
+
+            <div class="enygmalab-stats fade-in">
+                <div class="enygmalab-stat">
+                    <div class="enygmalab-stat-number">48h</div>
+                    <div class="enygmalab-stat-label" data-i18n="enygmalab.stats.matching">Tiempo de Matching</div>
+                </div>
+                <div class="enygmalab-stat">
+                    <div class="enygmalab-stat-number">Top 3%</div>
+                    <div class="enygmalab-stat-label" data-i18n="enygmalab.stats.talent">Talento Elite LatAm</div>
+                </div>
+                <div class="enygmalab-stat">
+                    <div class="enygmalab-stat-number">4+</div>
+                    <div class="enygmalab-stat-label" data-i18n="enygmalab.stats.profiles">Perfiles Disponibles</div>
+                </div>
+                <div class="enygmalab-stat">
+                    <div class="enygmalab-stat-number">EST/PST</div>
+                    <div class="enygmalab-stat-label" data-i18n="enygmalab.stats.timezone">Alineación Horaria</div>
+                </div>
+            </div>
+
+            <div class="enygmalab-services-grid fade-in">
+                <div class="enygmalab-service-card">
+                    <div class="enygmalab-service-icon"><i class="fas fa-users"></i></div>
+                    <h3 data-i18n="enygmalab.services.staff.title">Staff Augmentation</h3>
+                    <p data-i18n="enygmalab.services.staff.desc">Ingenieros veteados con proceso riguroso, listos para integrarse a tu equipo en días, no meses.</p>
+                    <ul class="enygmalab-service-list">
+                        <li><i class="fas fa-check"></i><span data-i18n="enygmalab.services.staff.item1">Full Stack (React / Node.js)</span></li>
+                        <li><i class="fas fa-check"></i><span data-i18n="enygmalab.services.staff.item2">Java / Backend</span></li>
+                        <li><i class="fas fa-check"></i><span data-i18n="enygmalab.services.staff.item3">QA Automation Engineers</span></li>
+                    </ul>
+                </div>
+                <div class="enygmalab-service-card">
+                    <div class="enygmalab-service-icon"><i class="fas fa-brain"></i></div>
+                    <h3 data-i18n="enygmalab.services.ai.title">AI Solutions</h3>
+                    <p data-i18n="enygmalab.services.ai.desc">Soluciones de inteligencia artificial a medida, desde integración LLM hasta automatización de procesos.</p>
+                    <ul class="enygmalab-service-list">
+                        <li><i class="fas fa-check"></i><span data-i18n="enygmalab.services.ai.item1">Integración de modelos LLM</span></li>
+                        <li><i class="fas fa-check"></i><span data-i18n="enygmalab.services.ai.item2">Automatización con IA</span></li>
+                        <li><i class="fas fa-check"></i><span data-i18n="enygmalab.services.ai.item3">AI / LLM Engineers (próximamente)</span></li>
+                    </ul>
+                </div>
+                <div class="enygmalab-service-card">
+                    <div class="enygmalab-service-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 data-i18n="enygmalab.services.qa.title">Quality Engineering</h3>
+                    <p data-i18n="enygmalab.services.qa.desc">Frameworks completos de automatización QA que reducen bugs y aceleran el ciclo de entrega.</p>
+                    <ul class="enygmalab-service-list">
+                        <li><i class="fas fa-check"></i><span data-i18n="enygmalab.services.qa.item1">Automatización QA (Cypress / Playwright)</span></li>
+                        <li><i class="fas fa-check"></i><span data-i18n="enygmalab.services.qa.item2">Integración CI/CD con Jenkins</span></li>
+                        <li><i class="fas fa-check"></i><span data-i18n="enygmalab.services.qa.item3">Testing end-to-end y estrategia</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="enygmalab-cta fade-in">
+                <a href="https://enygmalab.com" target="_blank" class="btn btn-enygmalab">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span data-i18n="enygmalab.cta">Visita enygmalab.com</span>
                 </a>
             </div>
         </div>
     </section>
 
+    <!-- Sobre Mí -->
     <section id="sobre-mi" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">Sobre Mí</h2>
-            <div class="about-content fade-in">
-                <p class="about-text">
-                    ¡Saludos! 👋 Soy Anthony, Ingeniero de Sistemas y CTO de <strong>EnygmaLab</strong> — una empresa de staff augmentation y soluciones de IA basada en la República Dominicana, especializada en conectar empresas con ingenieros nearshore elite de LatAm. Con más de 6 años de experiencia en automatización de pruebas y desarrollo de software, combino liderazgo técnico, visión de producto y formación de talento.
-                </p>
+            <h2 class="section-title fade-in" data-i18n="about.title">Sobre Mí</h2>
+            <div class="about-shell">
+                <div class="about-content fade-in">
+                    <p class="about-text about-intro" data-i18n="about.mainText">
+                        ¡Saludos! 👋 Soy Anthony, Ingeniero de Sistemas y CTO de EnygmaLab — una empresa de staff augmentation y soluciones de IA basada en la República Dominicana, especializada en conectar empresas con ingenieros nearshore elite de LatAm. Con más de 6 años de experiencia en automatización de pruebas y desarrollo de software, combino liderazgo técnico, visión de producto y formación de talento.
+                    </p>
+                </div>
 
-                <h3 class="about-section-title">EnygmaLab — Staff Augmentation & AI Solutions</h3>
-                <p class="about-text">
-                    Como CTO y co-fundador, lidero la arquitectura técnica y los procesos de vetting de ingenieros en EnygmaLab. Ofrecemos matching en 48 horas con ingenieros en el top 3%, alineados con zonas horarias EST/PST. Perfiles actuales: Full Stack (React/Node), Java/Backend y QA Engineers.
-                </p>
+                <div class="about-story-grid">
+                    <div class="about-story-card fade-in">
+                        <h3 class="about-section-title" data-i18n="about.enygmalabTitle">EnygmaLab — Staff Augmentation & AI Solutions</h3>
+                        <p class="about-text" data-i18n="about.enygmalabText">
+                            Como CTO y co-fundador, lidero la arquitectura técnica y los procesos de vetting de ingenieros en EnygmaLab. Ofrecemos matching en 48 horas con ingenieros en el top 3%, alineados con zonas horarias EST/PST. Perfiles actuales: Full Stack (React/Node), Java/Backend y QA Engineers.
+                        </p>
+                    </div>
 
-                <h3 class="about-section-title">Aprendizaje Continuo y Contribuciones</h3>
-                <p class="about-text">
-                    Busco activamente nuevas tecnologías y metodologías para mantenerme actualizado en un campo en constante evolución. Contribuyo a proyectos de código abierto y aplico consistentemente las habilidades aprendidas a escenarios prácticos del mundo real.
-                </p>
+                    <div class="about-story-card fade-in">
+                        <h3 class="about-section-title" data-i18n="about.learningTitle">Aprendizaje Continuo y Contribuciones</h3>
+                        <p class="about-text" data-i18n="about.learningText">
+                            Busco activamente nuevas tecnologías y metodologías para mantenerme actualizado en un campo en constante evolución. Contribuyo a proyectos de código abierto y aplico consistentemente las habilidades aprendidas a escenarios prácticos del mundo real.
+                        </p>
+                    </div>
 
-                <h3 class="about-section-title">Intereses Personales</h3>
-                <p class="about-text">
-                    Fuera de la vida profesional, encuentro alegría en la lectura, la exploración de videojuegos y el arte visual, lo que me mantiene equilibrado y creativamente inspirado.
-                </p>
+                    <div class="about-story-card about-story-card-wide fade-in">
+                        <h3 class="about-section-title" data-i18n="about.interestsTitle">Intereses Personales</h3>
+                        <p class="about-text" data-i18n="about.interestsText">
+                            Fuera de la vida profesional, encuentro alegría en la lectura, la exploración de videojuegos y el arte visual, lo que me mantiene equilibrado y creativamente inspirado.
+                        </p>
+                    </div>
+                </div>
 
                 <div class="about-highlights">
                     <div class="highlight-item">
                         <div class="highlight-title">
                             <i class="fas fa-building"></i>
-                            <span>CTO & Co-Fundador — EnygmaLab</span>
+                            <span data-i18n="about.highlights.cto.title">CTO & Co-Fundador — EnygmaLab</span>
                         </div>
-                        <div class="highlight-content">
+                        <div class="highlight-content" data-i18n="about.highlights.cto.content">
                             Empresa de staff augmentation y soluciones de IA. Ingenieros nearshore elite LatAm con vetting top 3%, matching en 48h y alineación EST/PST. Perfiles: Full Stack, Java/Backend, QA, DevOps (próximamente) y AI/LLM (próximamente).
                         </div>
                     </div>
                     <div class="highlight-item">
                         <div class="highlight-title">
                             <i class="fas fa-robot"></i>
-                            <span>Expertise en QA Automation</span>
+                            <span data-i18n="about.highlights.qa.title">Expertise en QA Automation</span>
                         </div>
-                        <div class="highlight-content">
+                        <div class="highlight-content" data-i18n="about.highlights.qa.content">
                             Desarrollo de frameworks de automatización completos utilizando herramientas como Cypress y Selenium, reduciendo el tiempo de testing en un 30% en múltiples proyectos.
                         </div>
                     </div>
                     <div class="highlight-item">
                         <div class="highlight-title">
                             <i class="fas fa-code"></i>
-                            <span>Desarrollo de Software</span>
+                            <span data-i18n="about.highlights.dev.title">Desarrollo de Software</span>
                         </div>
-                        <div class="highlight-content">
+                        <div class="highlight-content" data-i18n="about.highlights.dev.content">
                             Experiencia en desarrollo full-stack con enfoque en calidad y mejores prácticas. Especializado en arquitecturas escalables y microservicios con tecnologías modernas.
                         </div>
                     </div>
                     <div class="highlight-item">
                         <div class="highlight-title">
                             <i class="fas fa-shield-alt"></i>
-                            <span>Ciberseguridad & DevSecOps</span>
+                            <span data-i18n="about.highlights.security.title">Ciberseguridad & DevSecOps</span>
                         </div>
-                        <div class="highlight-content">
+                        <div class="highlight-content" data-i18n="about.highlights.security.content">
                             Rol clave en mejorar la seguridad de bases de datos de clientes usando SIEM y Firewalls, alineado con ISO27001 y estándares NIST.
                         </div>
                     </div>
                     <div class="highlight-item">
                         <div class="highlight-title">
                             <i class="fas fa-chalkboard-teacher"></i>
-                            <span>Educación y Mentoría</span>
+                            <span data-i18n="about.highlights.edu.title">Educación y Mentoría</span>
                         </div>
-                        <div class="highlight-content">
+                        <div class="highlight-content" data-i18n="about.highlights.edu.content">
                             Profesor universitario y mentor técnico especializado en Java y metodologías ágiles. Comprometido con formar la próxima generación de desarrolladores.
                         </div>
                     </div>
@@ -129,29 +243,22 @@
         </div>
     </section>
 
+    <!-- Especialidades -->
     <section id="especialidades" class="section section-alt">
         <div class="container">
-            <h2 class="section-title fade-in">Especialidades</h2>
+            <h2 class="section-title fade-in" data-i18n="expertise.title">Especialidades</h2>
+            <div class="expertise-intro fade-in">
+                <p data-i18n="expertise.intro">Áreas en las que combino liderazgo técnico, ejecución y visión de producto.</p>
+            </div>
             <div class="expertise-grid">
                 <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3>CTO & Tech Leadership</h3>
-                    <p>Liderazgo técnico y estratégico como CTO de EnygmaLab, definiendo arquitectura, procesos y cultura de ingeniería.</p>
+                    <div class="expertise-icon"><i class="fas fa-building"></i></div>
+                    <h3 data-i18n="expertise.cto.title">CTO & Tech Leadership</h3>
+                    <p data-i18n="expertise.cto.desc">Liderazgo técnico y estratégico como CTO de EnygmaLab, definiendo arquitectura, procesos y cultura de ingeniería.</p>
                     <div class="expertise-checks">
-                        <div class="expertise-check">
-                            <i class="fas fa-check"></i>
-                            <span>Vetting de ingenieros top 3% en LatAm</span>
-                        </div>
-                        <div class="expertise-check">
-                            <i class="fas fa-check"></i>
-                            <span>Matching de talento en 48 horas</span>
-                        </div>
-                        <div class="expertise-check">
-                            <i class="fas fa-check"></i>
-                            <span>Estrategia de AI/LLM y DevOps</span>
-                        </div>
+                        <div class="expertise-check"><i class="fas fa-check"></i><span data-i18n="expertise.cto.item1">Vetting de ingenieros top 3% en LatAm</span></div>
+                        <div class="expertise-check"><i class="fas fa-check"></i><span data-i18n="expertise.cto.item2">Matching de talento en 48 horas</span></div>
+                        <div class="expertise-check"><i class="fas fa-check"></i><span data-i18n="expertise.cto.item3">Estrategia de AI/LLM y DevOps</span></div>
                     </div>
                     <div class="tech-tags">
                         <span class="tech-tag">Staff Augmentation</span>
@@ -161,24 +268,13 @@
                 </div>
 
                 <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>QA Automation Leadership</h3>
-                    <p>Líder de automatización de pruebas con experiencia comprobada en aumentar la cobertura y eficiencia del testing.</p>
+                    <div class="expertise-icon"><i class="fas fa-robot"></i></div>
+                    <h3 data-i18n="expertise.qa.title">QA Automation Leadership</h3>
+                    <p data-i18n="expertise.qa.desc">Líder de automatización de pruebas con experiencia comprobada en aumentar la cobertura y eficiencia del testing.</p>
                     <div class="expertise-checks">
-                        <div class="expertise-check">
-                            <i class="fas fa-check"></i>
-                            <span>Incremento de 60% en cobertura de pruebas automatizadas</span>
-                        </div>
-                        <div class="expertise-check">
-                            <i class="fas fa-check"></i>
-                            <span>Reducción del 30% en bugs mediante testing estratégico</span>
-                        </div>
-                        <div class="expertise-check">
-                            <i class="fas fa-check"></i>
-                            <span>Implementación de CI/CD con Jenkins</span>
-                        </div>
+                        <div class="expertise-check"><i class="fas fa-check"></i><span data-i18n="expertise.qa.item1">Incremento de 60% en cobertura de pruebas automatizadas</span></div>
+                        <div class="expertise-check"><i class="fas fa-check"></i><span data-i18n="expertise.qa.item2">Reducción del 30% en bugs mediante testing estratégico</span></div>
+                        <div class="expertise-check"><i class="fas fa-check"></i><span data-i18n="expertise.qa.item3">Implementación de CI/CD con Jenkins</span></div>
                     </div>
                     <div class="tech-tags">
                         <span class="tech-tag">Cypress</span>
@@ -189,24 +285,13 @@
                 </div>
 
                 <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Software Development</h3>
-                    <p>Desarrollador full-stack con enfoque en calidad y mejores prácticas de desarrollo.</p>
+                    <div class="expertise-icon"><i class="fas fa-code"></i></div>
+                    <h3 data-i18n="expertise.dev.title">Software Development</h3>
+                    <p data-i18n="expertise.dev.desc">Desarrollador full-stack con enfoque en calidad y mejores prácticas de desarrollo.</p>
                     <div class="expertise-checks">
-                        <div class="expertise-check">
-                            <i class="fas fa-check"></i>
-                            <span>Desarrollo de APIs y microservicios</span>
-                        </div>
-                        <div class="expertise-check">
-                            <i class="fas fa-check"></i>
-                            <span>Optimización de bases de datos SQL</span>
-                        </div>
-                        <div class="expertise-check">
-                            <i class="fas fa-check"></i>
-                            <span>Implementación de arquitecturas escalables</span>
-                        </div>
+                        <div class="expertise-check"><i class="fas fa-check"></i><span data-i18n="expertise.dev.item1">Desarrollo de APIs y microservicios</span></div>
+                        <div class="expertise-check"><i class="fas fa-check"></i><span data-i18n="expertise.dev.item2">Optimización de bases de datos SQL</span></div>
+                        <div class="expertise-check"><i class="fas fa-check"></i><span data-i18n="expertise.dev.item3">Implementación de arquitecturas escalables</span></div>
                     </div>
                     <div class="tech-tags">
                         <span class="tech-tag">.NET Core</span>
@@ -217,24 +302,13 @@
                 </div>
 
                 <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Cybersecurity & DevSecOps</h3>
-                    <p>Experiencia en seguridad informática y mejores prácticas de DevSecOps.</p>
+                    <div class="expertise-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 data-i18n="expertise.security.title">Cybersecurity & DevSecOps</h3>
+                    <p data-i18n="expertise.security.desc">Experiencia en seguridad informática y mejores prácticas de DevSecOps.</p>
                     <div class="expertise-checks">
-                        <div class="expertise-check">
-                            <i class="fas fa-check"></i>
-                            <span>Certificaciones NSE 1 y 2 en Network Security</span>
-                        </div>
-                        <div class="expertise-check">
-                            <i class="fas fa-check"></i>
-                            <span>Implementación de medidas de seguridad SIEM</span>
-                        </div>
-                        <div class="expertise-check">
-                            <i class="fas fa-check"></i>
-                            <span>Reducción del 80% en vulnerabilidades</span>
-                        </div>
+                        <div class="expertise-check"><i class="fas fa-check"></i><span data-i18n="expertise.security.item1">Certificaciones NSE 1 y 2 en Network Security</span></div>
+                        <div class="expertise-check"><i class="fas fa-check"></i><span data-i18n="expertise.security.item2">Implementación de medidas de seguridad SIEM</span></div>
+                        <div class="expertise-check"><i class="fas fa-check"></i><span data-i18n="expertise.security.item3">Reducción del 80% en vulnerabilidades</span></div>
                     </div>
                     <div class="tech-tags">
                         <span class="tech-tag">Docker</span>
@@ -245,24 +319,13 @@
                 </div>
 
                 <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                    </div>
-                    <h3>Educación & Mentoría</h3>
-                    <p>Profesor universitario y mentor técnico especializado en Java y metodologías ágiles.</p>
+                    <div class="expertise-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3 data-i18n="expertise.education.title">Educación & Mentoría</h3>
+                    <p data-i18n="expertise.education.desc">Profesor universitario y mentor técnico especializado en Java y metodologías ágiles.</p>
                     <div class="expertise-checks">
-                        <div class="expertise-check">
-                            <i class="fas fa-check"></i>
-                            <span>Máster en Inteligencia Artificial</span>
-                        </div>
-                        <div class="expertise-check">
-                            <i class="fas fa-check"></i>
-                            <span>Facilitador de formación profesional</span>
-                        </div>
-                        <div class="expertise-check">
-                            <i class="fas fa-check"></i>
-                            <span>Certificado C1 Advanced en inglés</span>
-                        </div>
+                        <div class="expertise-check"><i class="fas fa-check"></i><span data-i18n="expertise.education.item1">Máster en Inteligencia Artificial</span></div>
+                        <div class="expertise-check"><i class="fas fa-check"></i><span data-i18n="expertise.education.item2">Facilitador de formación profesional</span></div>
+                        <div class="expertise-check"><i class="fas fa-check"></i><span data-i18n="expertise.education.item3">Certificado C1 Advanced en inglés</span></div>
                     </div>
                     <div class="tech-tags">
                         <span class="tech-tag">Java</span>
@@ -276,39 +339,39 @@
             <div class="stats-grid">
                 <div class="stat-card fade-in">
                     <div class="stat-number">6+</div>
-                    <div class="stat-label">Años de Experiencia</div>
+                    <div class="stat-label" data-i18n="stats.experience">Años de Experiencia</div>
                 </div>
                 <div class="stat-card fade-in">
                     <div class="stat-number">60%</div>
-                    <div class="stat-label">↑ Cobertura de Tests</div>
+                    <div class="stat-label" data-i18n="stats.testCoverage">↑ Cobertura de Tests</div>
                 </div>
                 <div class="stat-card fade-in">
                     <div class="stat-number">30%</div>
-                    <div class="stat-label">↓ Bugs en Producción</div>
+                    <div class="stat-label" data-i18n="stats.bugReduction">↓ Bugs en Producción</div>
                 </div>
                 <div class="stat-card fade-in">
                     <div class="stat-number">80%</div>
-                    <div class="stat-label">↑ Eficiencia en QA</div>
+                    <div class="stat-label" data-i18n="stats.qaEfficiency">↑ Eficiencia en QA</div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Proyectos -->
     <section id="proyectos" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">Algunos proyectos realizados</h2>
+            <h2 class="section-title fade-in" data-i18n="projects.title">Algunos proyectos realizados</h2>
             <div class="contenedor-proyectos">
 
-                <!-- EnygmaLab -->
-                <div class="proyecto fade-in">
+                <div class="proyecto fade-in" data-project="enygmalab">
                     <a href="https://enygmalab.com" target="_blank">
-                         <div class="foto">
+                        <div class="foto">
                             <img src="resources/proyectos/EnygmaLab.png" alt="EnygmaLab">
                         </div>
                         <div class="info">
-                            <h4>EnygmaLab</h4>
-                            <h5>Staff Augmentation & AI Solutions</h5>
-                            <p>Empresa nearshore que conecta compañías con ingenieros elite de LatAm (top 3%). Matching en 48h, alineación EST/PST y perfiles en Full Stack, Java/Backend y QA Engineering.</p>
+                            <h4 data-i18n="projects.enygmalab.title">EnygmaLab</h4>
+                            <h5 data-i18n="projects.enygmalab.subtitle">Staff Augmentation & AI Solutions</h5>
+                            <p data-i18n="projects.enygmalab.desc">Empresa nearshore que conecta compañías con ingenieros elite de LatAm (top 3%). Matching en 48h, alineación EST/PST y perfiles en Full Stack, Java/Backend y QA Engineering.</p>
                             <div class="tech-stack">
                                 <span class="tech-tag">Staff Augmentation</span>
                                 <span class="tech-tag">AI Solutions</span>
@@ -320,16 +383,15 @@
                     </a>
                 </div>
 
-                <!-- AgroSoftWeb -->
-                <div class="proyecto fade-in">
+                <div class="proyecto fade-in" data-project="agroSoftWeb">
                     <a href="https://github.com/anthonybarrera47/ProyectoFinalAp2" target="_blank">
                         <div class="foto">
                             <img src="resources/proyectos/AgroSoftWeb.png" alt="AgroSoftWeb">
                         </div>
                         <div class="info">
-                            <h4>AgroSoftWeb</h4>
-                            <h5>Sistema de Gestión Agrícola</h5>
-                            <p>Aplicación web para la gestión y control de procesos agrícolas, incluyendo inventario, ventas y reportes.</p>
+                            <h4 data-i18n="projects.agroSoftWeb.title">AgroSoftWeb</h4>
+                            <h5 data-i18n="projects.agroSoftWeb.subtitle">Sistema de Gestión Agrícola</h5>
+                            <p data-i18n="projects.agroSoftWeb.desc">Aplicación web para la gestión y control de procesos agrícolas, incluyendo inventario, ventas y reportes.</p>
                             <div class="tech-stack">
                                 <span class="tech-tag">ASP.NET Core</span>
                                 <span class="tech-tag">Entity Framework</span>
@@ -341,16 +403,15 @@
                     </a>
                 </div>
 
-                <!-- AgroSoft Desktop -->
-                <div class="proyecto fade-in">
+                <div class="proyecto fade-in" data-project="agroSoftDesktop">
                     <a href="https://github.com/anthonybarrera47/proyectofinal" target="_blank">
                         <div class="foto">
                             <img src="resources/proyectos/AgroSoftDesktop.png" alt="AgroSoft-Escritorio">
                         </div>
                         <div class="info">
-                            <h4>AgroSoft-Escritorio</h4>
-                            <h5>Versión de Escritorio</h5>
-                            <p>Versión desktop del sistema de gestión agrícola con funcionalidades offline y sincronización.</p>
+                            <h4 data-i18n="projects.agroSoftDesktop.title">AgroSoft-Escritorio</h4>
+                            <h5 data-i18n="projects.agroSoftDesktop.subtitle">Versión de Escritorio</h5>
+                            <p data-i18n="projects.agroSoftDesktop.desc">Versión desktop del sistema de gestión agrícola con funcionalidades offline y sincronización.</p>
                             <div class="tech-stack">
                                 <span class="tech-tag">C#</span>
                                 <span class="tech-tag">WPF</span>
@@ -366,57 +427,102 @@
         </div>
     </section>
 
+    <!-- Contacto -->
     <section id="contacto" class="contact-section section-alt">
         <div class="container">
-            <div class="contact-content">
-                <h2 class="contact-title fade-in">Conectemos</h2>
-                <div class="contact-description fade-in">
-                    <p class="contact-text">¿Interesado en colaborar, contratar talento a través de EnygmaLab, o conocer más sobre mi trabajo?</p>
-                    <p class="contact-text">¡Encuéntrame en mis redes sociales!</p>
-                </div>
-                <div class="social-grid">
-                    <a href="https://www.linkedin.com/in/inganthonybarrera/" target="_blank" class="social-card fade-in">
-                        <div class="social-icon">
+            <div class="contact-shell">
+                <div class="contact-copy">
+                    <p class="contact-eyebrow fade-in" data-i18n="contact.eyebrow">Disponible para colaboraciones, liderazgo técnico y oportunidades nearshore</p>
+                    <h2 class="contact-title fade-in" data-i18n="contact.title">Conectemos</h2>
+                    <p class="contact-lead fade-in" data-i18n="contact.text1">¿Interesado en colaborar, contratar talento a través de EnygmaLab, o conocer más sobre mi trabajo?</p>
+                    <p class="contact-support fade-in" data-i18n="contact.text2">Elige el canal que mejor encaje con lo que necesitas y conversemos.</p>
+
+                    <div class="contact-actions fade-in">
+                        <a href="https://www.linkedin.com/in/inganthonybarrera/" target="_blank" class="contact-cta contact-cta-primary">
                             <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div class="social-name">LinkedIn</div>
-                        <div class="social-username">@inganthonybarrera</div>
-                    </a>
-                    <a href="https://www.instagram.com/anthonybarrera48/?hl=es-la" target="_blank" class="social-card fade-in">
-                        <div class="social-icon">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                        <div class="social-name">Instagram</div>
-                        <div class="social-username">@anthonybarrera48</div>
-                    </a>
-                    <a href="https://twitter.com/AnthonyManuel48" target="_blank" class="social-card fade-in">
-                        <div class="social-icon">
-                            <i class="fab fa-twitter"></i>
-                        </div>
-                        <div class="social-name">Twitter</div>
-                        <div class="social-username">@AnthonyManuel48</div>
-                    </a>
-                    <a href="https://www.youtube.com/channel/UCBAgTVQPEwsIn3njFQBEtEA" target="_blank" class="social-card fade-in">
-                        <div class="social-icon">
-                            <i class="fab fa-youtube"></i>
-                        </div>
-                        <div class="social-name">YouTube</div>
-                        <div class="social-username">Anthony Barrera</div>
-                    </a>
-                    <a href="https://github.com/anthonybarrera47" target="_blank" class="social-card fade-in">
-                        <div class="social-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <div class="social-name">GitHub</div>
-                        <div class="social-username">@anthonybarrera47</div>
-                    </a>
-                    <a href="https://enygmalab.com" target="_blank" class="social-card fade-in">
-                        <div class="social-icon">
+                            <span data-i18n="contact.ctaPrimary">Hablemos por LinkedIn</span>
+                        </a>
+                        <a href="https://enygmalab.com" target="_blank" class="contact-cta contact-cta-secondary">
                             <i class="fas fa-building"></i>
+                            <span data-i18n="contact.ctaSecondary">Ver EnygmaLab</span>
+                        </a>
+                    </div>
+
+                    <div class="contact-points fade-in">
+                        <div class="contact-point">
+                            <span class="contact-point-line"></span>
+                            <p data-i18n="contact.point1">Staff augmentation y perfiles técnicos validados.</p>
                         </div>
-                        <div class="social-name">EnygmaLab</div>
-                        <div class="social-username">enygmalab.com</div>
-                    </a>
+                        <div class="contact-point">
+                            <span class="contact-point-line"></span>
+                            <p data-i18n="contact.point2">Conversaciones sobre QA, software y liderazgo de ingeniería.</p>
+                        </div>
+                        <div class="contact-point">
+                            <span class="contact-point-line"></span>
+                            <p data-i18n="contact.point3">Presencia activa en comunidades, contenido y proyectos técnicos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-panel fade-in">
+                    <div class="contact-panel-header">
+                        <div>
+                            <p class="contact-panel-label" data-i18n="contact.panelLabel">Canales disponibles</p>
+                            <h3 class="contact-panel-title" data-i18n="contact.panelTitle">Escoge dónde conectar</h3>
+                        </div>
+                        <span class="contact-panel-badge" data-i18n="contact.panelBadge">Respuesta rápida</span>
+                    </div>
+
+                    <div class="social-grid">
+                        <a href="https://www.linkedin.com/in/inganthonybarrera/" target="_blank" class="social-card">
+                            <div class="social-icon"><i class="fab fa-linkedin"></i></div>
+                            <div class="social-meta">
+                                <div class="social-name">LinkedIn</div>
+                                <div class="social-username">@inganthonybarrera</div>
+                            </div>
+                            <div class="social-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
+                        </a>
+                        <a href="https://www.instagram.com/anthonybarrera48/?hl=es-la" target="_blank" class="social-card">
+                            <div class="social-icon"><i class="fab fa-instagram"></i></div>
+                            <div class="social-meta">
+                                <div class="social-name">Instagram</div>
+                                <div class="social-username">@anthonybarrera48</div>
+                            </div>
+                            <div class="social-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
+                        </a>
+                        <a href="https://twitter.com/AnthonyManuel48" target="_blank" class="social-card">
+                            <div class="social-icon"><i class="fab fa-twitter"></i></div>
+                            <div class="social-meta">
+                                <div class="social-name">Twitter</div>
+                                <div class="social-username">@AnthonyManuel48</div>
+                            </div>
+                            <div class="social-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCBAgTVQPEwsIn3njFQBEtEA" target="_blank" class="social-card">
+                            <div class="social-icon"><i class="fab fa-youtube"></i></div>
+                            <div class="social-meta">
+                                <div class="social-name">YouTube</div>
+                                <div class="social-username">Anthony Barrera</div>
+                            </div>
+                            <div class="social-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
+                        </a>
+                        <a href="https://github.com/anthonybarrera47" target="_blank" class="social-card">
+                            <div class="social-icon"><i class="fab fa-github"></i></div>
+                            <div class="social-meta">
+                                <div class="social-name">GitHub</div>
+                                <div class="social-username">@anthonybarrera47</div>
+                            </div>
+                            <div class="social-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
+                        </a>
+                        <a href="https://enygmalab.com" target="_blank" class="social-card">
+                            <div class="social-icon"><i class="fas fa-building"></i></div>
+                            <div class="social-meta">
+                                <div class="social-name">EnygmaLab</div>
+                                <div class="social-username">enygmalab.com</div>
+                            </div>
+                            <div class="social-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -425,15 +531,39 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <a href="https://enygmalab.com" target="_blank" class="footer-logo">EnygmaLab</a>
-                <p class="footer-text">&copy; 2026 EnygmaLab. Todos los derechos reservados.</p>
+                <div class="footer-main">
+                    <a href="#hero" class="footer-brand">
+                        <span class="footer-brand-mark">AB</span>
+                        <span class="footer-brand-copy">
+                            <span class="footer-brand-name">Anthony Barrera</span>
+                            <span class="footer-brand-role" data-i18n="hero.lead">CTO at EnygmaLab | QA Automation & Software Development</span>
+                        </span>
+                    </a>
+
+                    <div class="footer-side">
+                        <a href="https://enygmalab.com" target="_blank" class="footer-logo">EnygmaLab</a>
+                        <div class="footer-links">
+                            <a href="#sobre-mi" class="footer-link" data-i18n="nav.sobreMi">Sobre Mí</a>
+                            <a href="#especialidades" class="footer-link" data-i18n="nav.especialidades">Especialidades</a>
+                            <a href="#proyectos" class="footer-link" data-i18n="nav.proyectos">Proyectos</a>
+                            <a href="#contacto" class="footer-link" data-i18n="nav.contacto">Contacto</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p class="footer-text">
+                        &copy; <span id="footer-year"></span> EnygmaLab.
+                        <span data-i18n="footer.rights">Todos los derechos reservados.</span>
+                    </p>
+                </div>
             </div>
         </div>
     </footer>
 
     <div class="toast" id="langToast">
         <i class="fas fa-globe"></i>
-        <span>Idioma cambiado a: <strong>Español</strong></span>
+        <span></span>
     </div>
 
     <script src="js/main.js"></script>
@@ -441,7 +571,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.querySelector('.menu-toggle');
             const navLinks = document.querySelector('.nav-links');
-            
+
             menuToggle.addEventListener('click', function() {
                 menuToggle.classList.toggle('active');
                 navLinks.classList.toggle('active');

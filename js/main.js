@@ -1,412 +1,409 @@
-// Language translations
 const translations = {
     es: {
         nav: {
             inicio: 'Inicio',
+            enygmalab: 'EnygmaLab',
             sobreMi: 'Sobre Mí',
             especialidades: 'Especialidades',
             proyectos: 'Proyectos',
             contacto: 'Contacto'
         },
         hero: {
-            greeting: '¡Saludos! 👋 Soy Anthony, un apasionado Ingeniero de Sistemas especializado en programación y calidad de software. Con más de 6 años de experiencia en automatización de pruebas y desarrollo de software, ofrezco una combinación única de habilidades que mejora tanto la eficiencia como la calidad en proyectos tecnológicos.',
-            title: 'Quality Engineering Leader & Java Educator',
-            subtitle: 'Construyendo software confiable a través de calidad, liderazgo y enseñanza. Lidero equipos multidisciplinarios de QA y desarrollo, automatizo procesos de testing y formo la próxima generación de desarrolladores Java con experiencia real de la industria.',
-            cta: {
-                primary: 'Trabajemos Juntos',
-                secondary: 'Ver LinkedIn'
-            }
+            kicker: 'Anthony Barrera',
+            lead: 'CTO at EnygmaLab | QA Automation & Software Development',
+            subtitle: 'Fundador y CTO de <a href="https://enygmalab.com" target="_blank" style="color:inherit;font-weight:600;">EnygmaLab</a> — empresa de staff augmentation y soluciones de IA con ingenieros nearshore elite de LatAm. Lidero equipos multidisciplinarios de QA y desarrollo, automatizo procesos de testing y construyo software confiable a través de calidad, liderazgo y enseñanza.',
+            ctaPrimary: 'EnygmaLab',
+            ctaSecondary: 'Ver LinkedIn',
+            signalTalent: 'Talento nearshore',
+            signalMatching: 'Matching'
         },
-        sections: {
-            about: {
-                title: 'Sobre Mí',
-                learning: {
-                    title: 'Aprendizaje Continuo y Contribuciones',
-                    content: 'Busco activamente nuevas tecnologías y metodologías para mantenerme actualizado en un campo en constante evolución. Contribuyo a proyectos de código abierto, aplicando consistentemente las habilidades aprendidas a escenarios prácticos.'
-                },
-                interests: {
-                    title: 'Intereses Personales',
-                    content: 'Fuera de la vida profesional, encuentro alegría en la lectura, la exploración de videojuegos y el arte visual, lo que me mantiene equilibrado y creativamente inspirado.'
-                }
-            },
-            expertise: {
-                title: 'Especialidades',
-                cards: {
-                    qa: {
-                        title: 'Expertise en QA Automation',
-                        content: 'Desarrollo de frameworks de automatización completos utilizando herramientas como Cypress y Selenium, reduciendo el tiempo de testing en un 30% en múltiples proyectos.',
-                        details: [
-                            'Incremento de 60% en cobertura de pruebas automatizadas',
-                            'Reducción del 30% en bugs mediante testing estratégico',
-                            'Implementación de CI/CD con Jenkins'
-                        ]
-                    },
-                    dev: {
-                        title: 'Desarrollo de Software',
-                        content: 'Experiencia en desarrollo full-stack con enfoque en calidad y mejores prácticas. Especializado en arquitecturas escalables y microservicios con tecnologías modernas.',
-                        details: [
-                            'Desarrollo de APIs y microservicios',
-                            'Optimización de bases de datos SQL',
-                            'Implementación de arquitecturas escalables'
-                        ]
-                    },
-                    security: {
-                        title: 'Ciberseguridad & DevSecOps',
-                        content: 'Rol clave en mejorar la seguridad de bases de datos de clientes usando SIEM y Firewalls, alineado con ISO27001 y estándares NIST.',
-                        details: [
-                            'Certificaciones NSE 1 y 2 en Network Security',
-                            'Implementación de medidas de seguridad SIEM',
-                            'Reducción del 80% en vulnerabilidades'
-                        ]
-                    },
-                    education: {
-                        title: 'Educación y Mentoría',
-                        content: 'Profesor universitario y mentor técnico especializado en Java y metodologías ágiles. Comprometido con formar la próxima generación de desarrolladores.',
-                        details: [
-                            'Máster en Inteligencia Artificial',
-                            'Facilitador de formación profesional',
-                            'Certificado C1 Advanced en inglés'
-                        ]
-                    }
-                }
-            },
-            projects: {
-                title: 'Algunos proyectos realizados',
-                 enygmalab: {
-                    title: 'EnygmaLab',
-                    subtitle: 'Staff Augmentation & AI Solutions',
-                    description: 'Empresa nearshore que conecta compañías con ingenieros elite de LatAm (top 3%). Matching en 48h, alineación EST/PST y perfiles en Full Stack, Java/Backend y QA Engineering.'
-                },
-                agroSoftWeb: {
-                    title: 'AgroSoftWeb',
-                    subtitle: 'Sistema de Gestión Agrícola',
-                    description: 'Aplicación web para la gestión y control de procesos agrícolas, incluyendo inventario, ventas y reportes.'
-                },
-                agroSoftDesktop: {
-                    title: 'AgroSoft-Escritorio',
-                    subtitle: 'Versión de Escritorio',
-                    description: 'Versión desktop del sistema de gestión agrícola con funcionalidades offline y sincronización.'
-                }
-            },
-            contact: {
-                title: 'Conectemos',
-                subtitle: '¿Interesado en colaborar o conocer más sobre mi trabajo?',
-                callToAction: '¡Encuéntrame en mis redes sociales!'
-            },
+        enygmalab: {
+            title: 'EnygmaLab',
+            tagline: 'Staff Augmentation & Soluciones de IA',
+            description: 'Conectamos empresas con ingenieros nearshore elite de LatAm. Matching garantizado en 48 horas con talento del top 3%, perfiles alineados con zonas horarias EST/PST y onboarding ágil.',
             stats: {
-                experience: 'Años de Experiencia',
-                testCoverage: '↑ Cobertura de Tests',
-                bugReduction: '↓ Bugs en Producción',
-                qaEfficiency: '↑ Eficiencia en QA'
+                matching: 'Tiempo de Matching',
+                talent: 'Talento Elite LatAm',
+                profiles: 'Perfiles Disponibles',
+                timezone: 'Alineación Horaria'
+            },
+            services: {
+                staff: {
+                    title: 'Staff Augmentation',
+                    desc: 'Ingenieros veteados con proceso riguroso, listos para integrarse a tu equipo en días, no meses.',
+                    item1: 'Full Stack (React / Node.js)',
+                    item2: 'Java / Backend',
+                    item3: 'QA Automation Engineers'
+                },
+                ai: {
+                    title: 'AI Solutions',
+                    desc: 'Soluciones de inteligencia artificial a medida, desde integración LLM hasta automatización de procesos.',
+                    item1: 'Integración de modelos LLM',
+                    item2: 'Automatización con IA',
+                    item3: 'AI / LLM Engineers (próximamente)'
+                },
+                qa: {
+                    title: 'Quality Engineering',
+                    desc: 'Frameworks completos de automatización QA que reducen bugs y aceleran el ciclo de entrega.',
+                    item1: 'Automatización QA (Cypress / Playwright)',
+                    item2: 'Integración CI/CD con Jenkins',
+                    item3: 'Testing end-to-end y estrategia'
+                }
+            },
+            cta: 'Visita enygmalab.com'
+        },
+        about: {
+            title: 'Sobre Mí',
+            mainText: '¡Saludos! 👋 Soy Anthony, Ingeniero de Sistemas y CTO de EnygmaLab — una empresa de staff augmentation y soluciones de IA basada en la República Dominicana, especializada en conectar empresas con ingenieros nearshore elite de LatAm. Con más de 6 años de experiencia en automatización de pruebas y desarrollo de software, combino liderazgo técnico, visión de producto y formación de talento.',
+            enygmalabTitle: 'EnygmaLab — Staff Augmentation & AI Solutions',
+            enygmalabText: 'Como CTO y co-fundador, lidero la arquitectura técnica y los procesos de vetting de ingenieros en EnygmaLab. Ofrecemos matching en 48 horas con ingenieros en el top 3%, alineados con zonas horarias EST/PST. Perfiles actuales: Full Stack (React/Node), Java/Backend y QA Engineers.',
+            learningTitle: 'Aprendizaje Continuo y Contribuciones',
+            learningText: 'Busco activamente nuevas tecnologías y metodologías para mantenerme actualizado en un campo en constante evolución. Contribuyo a proyectos de código abierto y aplico consistentemente las habilidades aprendidas a escenarios prácticos del mundo real.',
+            interestsTitle: 'Intereses Personales',
+            interestsText: 'Fuera de la vida profesional, encuentro alegría en la lectura, la exploración de videojuegos y el arte visual, lo que me mantiene equilibrado y creativamente inspirado.',
+            highlights: {
+                cto: {
+                    title: 'CTO & Co-Fundador — EnygmaLab',
+                    content: 'Empresa de staff augmentation y soluciones de IA. Ingenieros nearshore elite LatAm con vetting top 3%, matching en 48h y alineación EST/PST.'
+                },
+                qa: {
+                    title: 'Expertise en QA Automation',
+                    content: 'Desarrollo de frameworks de automatización completos utilizando herramientas como Cypress y Selenium, reduciendo el tiempo de testing en un 30% en múltiples proyectos.'
+                },
+                dev: {
+                    title: 'Desarrollo de Software',
+                    content: 'Experiencia en desarrollo full-stack con enfoque en calidad y mejores prácticas. Especializado en arquitecturas escalables y microservicios con tecnologías modernas.'
+                },
+                security: {
+                    title: 'Ciberseguridad & DevSecOps',
+                    content: 'Rol clave en mejorar la seguridad de bases de datos de clientes usando SIEM y Firewalls, alineado con ISO27001 y estándares NIST.'
+                },
+                edu: {
+                    title: 'Educación y Mentoría',
+                    content: 'Profesor universitario y mentor técnico especializado en Java y metodologías ágiles. Comprometido con formar la próxima generación de desarrolladores.'
+                }
             }
         },
-        toast: {
-            language: 'Idioma cambiado a: Español'
+        expertise: {
+            title: 'Especialidades',
+            intro: 'Áreas en las que combino liderazgo técnico, ejecución y visión de producto.',
+            cto: {
+                title: 'CTO & Tech Leadership',
+                desc: 'Liderazgo técnico y estratégico como CTO de EnygmaLab, definiendo arquitectura, procesos y cultura de ingeniería.',
+                item1: 'Vetting de ingenieros top 3% en LatAm',
+                item2: 'Matching de talento en 48 horas',
+                item3: 'Estrategia de AI/LLM y DevOps'
+            },
+            qa: {
+                title: 'QA Automation Leadership',
+                desc: 'Líder de automatización de pruebas con experiencia comprobada en aumentar la cobertura y eficiencia del testing.',
+                item1: 'Incremento de 60% en cobertura de pruebas automatizadas',
+                item2: 'Reducción del 30% en bugs mediante testing estratégico',
+                item3: 'Implementación de CI/CD con Jenkins'
+            },
+            dev: {
+                title: 'Software Development',
+                desc: 'Desarrollador full-stack con enfoque en calidad y mejores prácticas de desarrollo.',
+                item1: 'Desarrollo de APIs y microservicios',
+                item2: 'Optimización de bases de datos SQL',
+                item3: 'Implementación de arquitecturas escalables'
+            },
+            security: {
+                title: 'Cybersecurity & DevSecOps',
+                desc: 'Experiencia en seguridad informática y mejores prácticas de DevSecOps.',
+                item1: 'Certificaciones NSE 1 y 2 en Network Security',
+                item2: 'Implementación de medidas de seguridad SIEM',
+                item3: 'Reducción del 80% en vulnerabilidades'
+            },
+            education: {
+                title: 'Educación & Mentoría',
+                desc: 'Profesor universitario y mentor técnico especializado en Java y metodologías ágiles.',
+                item1: 'Máster en Inteligencia Artificial',
+                item2: 'Facilitador de formación profesional',
+                item3: 'Certificado C1 Advanced en inglés'
+            }
+        },
+        stats: {
+            experience: 'Años de Experiencia',
+            testCoverage: '↑ Cobertura de Tests',
+            bugReduction: '↓ Bugs en Producción',
+            qaEfficiency: '↑ Eficiencia en QA'
+        },
+        projects: {
+            title: 'Algunos proyectos realizados',
+            enygmalab: {
+                title: 'EnygmaLab',
+                subtitle: 'Staff Augmentation & AI Solutions',
+                desc: 'Empresa nearshore que conecta compañías con ingenieros elite de LatAm (top 3%). Matching en 48h, alineación EST/PST y perfiles en Full Stack, Java/Backend y QA Engineering.'
+            },
+            agroSoftWeb: {
+                title: 'AgroSoftWeb',
+                subtitle: 'Sistema de Gestión Agrícola',
+                desc: 'Aplicación web para la gestión y control de procesos agrícolas, incluyendo inventario, ventas y reportes.'
+            },
+            agroSoftDesktop: {
+                title: 'AgroSoft-Escritorio',
+                subtitle: 'Versión de Escritorio',
+                desc: 'Versión desktop del sistema de gestión agrícola con funcionalidades offline y sincronización.'
+            }
+        },
+        contact: {
+            title: 'Conectemos',
+            text1: '¿Interesado en colaborar, contratar talento a través de EnygmaLab, o conocer más sobre mi trabajo?',
+            text2: 'Elige el canal que mejor encaje con lo que necesitas y conversemos.',
+            eyebrow: 'Disponible para colaboraciones, liderazgo técnico y oportunidades nearshore',
+            ctaPrimary: 'Hablemos por LinkedIn',
+            ctaSecondary: 'Ver EnygmaLab',
+            point1: 'Staff augmentation y perfiles técnicos validados.',
+            point2: 'Conversaciones sobre QA, software y liderazgo de ingeniería.',
+            point3: 'Presencia activa en comunidades, contenido y proyectos técnicos.',
+            panelLabel: 'Canales disponibles',
+            panelTitle: 'Escoge dónde conectar',
+            panelBadge: 'Respuesta rápida'
         },
         footer: {
-            company: 'EnygmaLab',
             rights: 'Todos los derechos reservados.'
-        }
+        },
+        toast: 'Idioma cambiado a: <strong>Español</strong>'
     },
+
     en: {
         nav: {
             inicio: 'Home',
+            enygmalab: 'EnygmaLab',
             sobreMi: 'About Me',
             especialidades: 'Expertise',
             proyectos: 'Projects',
             contacto: 'Contact'
         },
         hero: {
-            greeting: 'Greetings! 👋 I\'m Anthony, a passionate Systems Engineer specializing in programming and software quality. With over 6 years of experience in test automation and software development, I offer a unique blend of skills that enhances both efficiency and quality in technology projects.',
-            title: 'Quality Engineering Leader & Java Educator',
-            subtitle: 'Building reliable software through quality, leadership, and education. I lead multidisciplinary QA and development teams, automate testing processes, and train the next generation of Java developers with real industry experience.',
-            cta: {
-                primary: "Let's Work Together",
-                secondary: 'View LinkedIn'
-            }
+            kicker: 'Anthony Barrera',
+            lead: 'CTO at EnygmaLab | QA Automation & Software Development',
+            subtitle: 'Founder and CTO of <a href="https://enygmalab.com" target="_blank" style="color:inherit;font-weight:600;">EnygmaLab</a> — a staff augmentation and AI solutions company connecting businesses with elite nearshore engineers from LatAm. I lead multidisciplinary QA and development teams, automate testing processes, and build reliable software through quality, leadership, and teaching.',
+            ctaPrimary: 'EnygmaLab',
+            ctaSecondary: 'View LinkedIn',
+            signalTalent: 'Nearshore talent',
+            signalMatching: 'Matching'
         },
-        sections: {
-            about: {
-                title: 'About Me',
-                learning: {
-                    title: 'Continuous Learning and Contributions',
-                    content: 'I actively seek new technologies and methodologies to stay current in an ever-evolving field. I contribute to open source projects, consistently applying learned skills to practical scenarios.'
-                },
-                interests: {
-                    title: 'Personal Interests',
-                    content: 'Outside of professional life, I find joy in reading, exploring video games, and visual arts, which keep me balanced and creatively inspired.'
-                }
-            },
-            expertise: {
-                title: 'Areas of Expertise',
-                cards: {
-                    qa: {
-                        title: 'QA Automation Expertise',
-                        content: 'Development of comprehensive automation frameworks using tools like Cypress and Selenium, reducing testing time by 30% across multiple projects.',
-                        details: [
-                            '60% increase in automated test coverage',
-                            '30% reduction in bugs through strategic testing',
-                            'CI/CD implementation with Jenkins'
-                        ]
-                    },
-                    dev: {
-                        title: 'Software Development',
-                        content: 'Full-stack development experience with a focus on quality and best practices. Specialized in scalable architectures and microservices with modern technologies.',
-                        details: [
-                            'API and microservices development',
-                            'SQL database optimization',
-                            'Implementation of scalable architectures'
-                        ]
-                    },
-                    security: {
-                        title: 'Cybersecurity & DevSecOps',
-                        content: 'Key role in enhancing client database security using SIEM and Firewalls, aligned with ISO27001 and NIST standards.',
-                        details: [
-                            'NSE 1 & 2 Network Security Certifications',
-                            'SIEM security measures implementation',
-                            '80% reduction in vulnerabilities'
-                        ]
-                    },
-                    education: {
-                        title: 'Education & Mentoring',
-                        content: 'University professor and technical mentor specialized in Java and agile methodologies. Committed to shaping the next generation of developers.',
-                        details: [
-                            'Master\'s in Artificial Intelligence',
-                            'Professional training facilitator',
-                            'C1 Advanced English certification'
-                        ]
-                    }
-                }
-            },
-            projects: {
-                title: 'Featured Projects',
-                enygmalab: {
-                    title: 'EnygmaLab',
-                    subtitle: 'Staff Augmentation & AI Solutions',
-                    description: 'A nearshore company that connects businesses with elite engineers from Latin America (top 3%). Matches within 48 hours, EST/PST time zone alignment, and profiles in Full Stack, Java/Backend, and QA Engineering.'
-                },
-                agroSoftWeb: {
-                    title: 'AgroSoftWeb',
-                    subtitle: 'Agricultural Management System',
-                    description: 'Web application for managing and controlling agricultural processes, including inventory, sales, and reporting.'
-                },
-                agroSoftDesktop: {
-                    title: 'AgroSoft-Desktop',
-                    subtitle: 'Desktop Version',
-                    description: 'Desktop version of the agricultural management system with offline capabilities and synchronization.'
-                }
-            },
-            contact: {
-                title: "Let's Connect",
-                subtitle: 'Interested in collaborating or learning more about my work?',
-                callToAction: 'Find me on social media!'
-            },
+        enygmalab: {
+            title: 'EnygmaLab',
+            tagline: 'Staff Augmentation & AI Solutions',
+            description: 'We connect companies with elite nearshore engineers from LatAm. Guaranteed 48-hour matching with top 3% talent, profiles aligned with EST/PST time zones, and agile onboarding.',
             stats: {
-                experience: 'Years of Experience',
-                testCoverage: '↑ Test Coverage',
-                bugReduction: '↓ Production Bugs',
-                qaEfficiency: '↑ QA Efficiency'
+                matching: 'Matching Time',
+                talent: 'Elite LatAm Talent',
+                profiles: 'Available Profiles',
+                timezone: 'Timezone Alignment'
+            },
+            services: {
+                staff: {
+                    title: 'Staff Augmentation',
+                    desc: 'Rigorously vetted engineers ready to integrate into your team in days, not months.',
+                    item1: 'Full Stack (React / Node.js)',
+                    item2: 'Java / Backend',
+                    item3: 'QA Automation Engineers'
+                },
+                ai: {
+                    title: 'AI Solutions',
+                    desc: 'Custom AI solutions, from LLM integration to process automation tailored to your needs.',
+                    item1: 'LLM model integration',
+                    item2: 'AI-powered automation',
+                    item3: 'AI / LLM Engineers (coming soon)'
+                },
+                qa: {
+                    title: 'Quality Engineering',
+                    desc: 'Comprehensive QA automation frameworks that reduce bugs and accelerate delivery cycles.',
+                    item1: 'QA Automation (Cypress / Playwright)',
+                    item2: 'CI/CD integration with Jenkins',
+                    item3: 'End-to-end testing & strategy'
+                }
+            },
+            cta: 'Visit enygmalab.com'
+        },
+        about: {
+            title: 'About Me',
+            mainText: 'Greetings! 👋 I\'m Anthony, a Systems Engineer and CTO of EnygmaLab — a staff augmentation and AI solutions company based in the Dominican Republic, specialized in connecting businesses with elite nearshore engineers from LatAm. With over 6 years of experience in test automation and software development, I combine technical leadership, product vision, and talent development.',
+            enygmalabTitle: 'EnygmaLab — Staff Augmentation & AI Solutions',
+            enygmalabText: 'As CTO and co-founder, I lead the technical architecture and engineer vetting processes at EnygmaLab. We offer 48-hour matching with top 3% engineers, aligned with EST/PST time zones. Current profiles: Full Stack (React/Node), Java/Backend and QA Engineers.',
+            learningTitle: 'Continuous Learning and Contributions',
+            learningText: 'I actively seek new technologies and methodologies to stay current in an ever-evolving field. I contribute to open source projects, consistently applying learned skills to practical real-world scenarios.',
+            interestsTitle: 'Personal Interests',
+            interestsText: 'Outside of professional life, I find joy in reading, exploring video games, and visual arts, which keep me balanced and creatively inspired.',
+            highlights: {
+                cto: {
+                    title: 'CTO & Co-Founder — EnygmaLab',
+                    content: 'Staff augmentation and AI solutions company. Elite LatAm nearshore engineers with top 3% vetting, 48h matching, and EST/PST alignment.'
+                },
+                qa: {
+                    title: 'QA Automation Expertise',
+                    content: 'Development of comprehensive automation frameworks using tools like Cypress and Selenium, reducing testing time by 30% across multiple projects.'
+                },
+                dev: {
+                    title: 'Software Development',
+                    content: 'Full-stack development experience with a focus on quality and best practices. Specialized in scalable architectures and microservices with modern technologies.'
+                },
+                security: {
+                    title: 'Cybersecurity & DevSecOps',
+                    content: 'Key role in enhancing client database security using SIEM and Firewalls, aligned with ISO27001 and NIST standards.'
+                },
+                edu: {
+                    title: 'Education & Mentoring',
+                    content: 'University professor and technical mentor specialized in Java and agile methodologies. Committed to shaping the next generation of developers.'
+                }
             }
         },
-        toast: {
-            language: 'Language changed to: English'
+        expertise: {
+            title: 'Areas of Expertise',
+            intro: 'Areas where I combine technical leadership, execution, and product vision.',
+            cto: {
+                title: 'CTO & Tech Leadership',
+                desc: 'Technical and strategic leadership as CTO of EnygmaLab, defining architecture, processes and engineering culture.',
+                item1: 'Top 3% engineer vetting across LatAm',
+                item2: '48-hour talent matching',
+                item3: 'AI/LLM and DevOps strategy'
+            },
+            qa: {
+                title: 'QA Automation Leadership',
+                desc: 'Test automation leader with proven experience in increasing coverage and testing efficiency.',
+                item1: '60% increase in automated test coverage',
+                item2: '30% reduction in bugs through strategic testing',
+                item3: 'CI/CD implementation with Jenkins'
+            },
+            dev: {
+                title: 'Software Development',
+                desc: 'Full-stack developer focused on quality and development best practices.',
+                item1: 'API and microservices development',
+                item2: 'SQL database optimization',
+                item3: 'Implementation of scalable architectures'
+            },
+            security: {
+                title: 'Cybersecurity & DevSecOps',
+                desc: 'Experience in computer security and DevSecOps best practices.',
+                item1: 'NSE 1 & 2 Network Security Certifications',
+                item2: 'SIEM security measures implementation',
+                item3: '80% reduction in vulnerabilities'
+            },
+            education: {
+                title: 'Education & Mentoring',
+                desc: 'University professor and technical mentor specialized in Java and agile methodologies.',
+                item1: "Master's in Artificial Intelligence",
+                item2: 'Professional training facilitator',
+                item3: 'C1 Advanced English certification'
+            }
+        },
+        stats: {
+            experience: 'Years of Experience',
+            testCoverage: '↑ Test Coverage',
+            bugReduction: '↓ Production Bugs',
+            qaEfficiency: '↑ QA Efficiency'
+        },
+        projects: {
+            title: 'Featured Projects',
+            enygmalab: {
+                title: 'EnygmaLab',
+                subtitle: 'Staff Augmentation & AI Solutions',
+                desc: 'A nearshore company connecting businesses with elite engineers from LatAm (top 3%). 48h matching, EST/PST alignment, profiles in Full Stack, Java/Backend and QA Engineering.'
+            },
+            agroSoftWeb: {
+                title: 'AgroSoftWeb',
+                subtitle: 'Agricultural Management System',
+                desc: 'Web application for managing and controlling agricultural processes, including inventory, sales, and reporting.'
+            },
+            agroSoftDesktop: {
+                title: 'AgroSoft-Desktop',
+                subtitle: 'Desktop Version',
+                desc: 'Desktop version of the agricultural management system with offline capabilities and synchronization.'
+            }
+        },
+        contact: {
+            title: "Let's Connect",
+            text1: 'Interested in collaborating, hiring talent through EnygmaLab, or learning more about my work?',
+            text2: 'Choose the channel that best fits what you need and let\'s talk.',
+            eyebrow: 'Available for collaborations, technical leadership, and nearshore opportunities',
+            ctaPrimary: 'Connect on LinkedIn',
+            ctaSecondary: 'Visit EnygmaLab',
+            point1: 'Staff augmentation and vetted technical profiles.',
+            point2: 'Conversations about QA, software, and engineering leadership.',
+            point3: 'Active presence in communities, content, and technical projects.',
+            panelLabel: 'Available channels',
+            panelTitle: 'Choose where to connect',
+            panelBadge: 'Fast response'
         },
         footer: {
-            company: 'EnygmaLab',
             rights: 'All rights reserved.'
-        }
+        },
+        toast: 'Language changed to: <strong>English</strong>'
     }
 };
 
-// Language switcher functionality
-document.addEventListener('DOMContentLoaded', () => {
-    const langSwitch = document.querySelector('.lang-switch');
-    if (!langSwitch) {
-        console.error('No se encontró el selector de idioma');
-        return;
-    }
+// Resolve a dot-notation key against a translations object
+function getPath(obj, path) {
+    return path.split('.').reduce((o, k) => o?.[k], obj);
+}
 
-    const options = langSwitch.querySelectorAll('.lang-option');
-    options.forEach(option => {
-        option.addEventListener('click', () => {
-            const lang = option.dataset.lang;
-            
-            // Update active state
-            options.forEach(opt => opt.classList.remove('active'));
-            option.classList.add('active');
-            
-            // Change language
-            changeLanguage(lang);
-            
-            // Show toast notification
-            showToast(translations[lang].toast.language);
-        });
+function changeLanguage(lang) {
+    const t = translations[lang];
+    document.documentElement.lang = lang;
+
+    // textContent updates
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const val = getPath(t, el.dataset.i18n);
+        if (val !== undefined) el.textContent = val;
     });
 
-    // Smooth scroll for navigation links
+    // innerHTML updates (for elements with embedded HTML like links)
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const val = getPath(t, el.dataset.i18nHtml);
+        if (val !== undefined) el.innerHTML = val;
+    });
+
+    // Footer year
+    const footerYear = document.getElementById('footer-year');
+    if (footerYear) footerYear.textContent = new Date().getFullYear();
+}
+
+function showToast(html) {
+    const toast = document.getElementById('langToast');
+    toast.querySelector('span').innerHTML = html;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3000);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Set footer year on load
+    const footerYear = document.getElementById('footer-year');
+    if (footerYear) footerYear.textContent = new Date().getFullYear();
+
+    // Language switcher
+    const langSwitch = document.querySelector('.lang-switch');
+    if (langSwitch) {
+        const options = langSwitch.querySelectorAll('.lang-option');
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                const lang = option.dataset.lang;
+                options.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+                changeLanguage(lang);
+                showToast(translations[lang].toast);
+            });
+        });
+    }
+
+    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
         });
     });
 });
-
-function showToast(message) {
-    const toast = document.getElementById('langToast');
-    toast.querySelector('span').innerHTML = message;
-    toast.classList.add('show');
-    
-    setTimeout(() => {
-        toast.classList.remove('show');
-    }, 3000);
-}
-
-function changeLanguage(lang) {
-    try {
-        document.documentElement.lang = lang;
-        const t = translations[lang];
-
-        // Update navigation
-        document.querySelectorAll('.nav-link').forEach((link, index) => {
-            const keys = ['inicio', 'sobreMi', 'especialidades', 'proyectos', 'contacto'];
-            link.textContent = t.nav[keys[index]];
-        });
-
-        // Update hero section
-        const heroGreeting = document.querySelector('.hero .subtitle');
-        const heroTitle = document.querySelector('.hero .lead');
-        const heroSubtitle = document.querySelector('.hero .subtitle');
-        const primaryBtn = document.querySelector('.btn-primary');
-        const secondaryBtn = document.querySelector('.btn-secondary');
-
-        if (heroGreeting) heroGreeting.textContent = t.hero.greeting;
-        if (heroTitle) heroTitle.textContent = t.hero.title;
-        if (heroSubtitle) heroSubtitle.textContent = t.hero.subtitle;
-        if (primaryBtn) primaryBtn.innerHTML = `<i class="fas fa-handshake"></i>${t.hero.cta.primary}`;
-        if (secondaryBtn) secondaryBtn.innerHTML = `<i class="fab fa-linkedin"></i>${t.hero.cta.secondary}`;
-
-        // Update about section
-        const aboutTitle = document.querySelector('#sobre-mi .section-title');
-        const aboutLearningTitle = document.querySelector('#sobre-mi .about-section-title:nth-of-type(1)');
-        const aboutLearningContent = document.querySelector('#sobre-mi .about-text:nth-of-type(2)');
-        const aboutInterestsTitle = document.querySelector('#sobre-mi .about-section-title:nth-of-type(2)');
-        const aboutInterestsContent = document.querySelector('#sobre-mi .about-text:nth-of-type(4)');
-
-        if (aboutTitle) aboutTitle.textContent = t.sections.about.title;
-        if (aboutLearningTitle) aboutLearningTitle.textContent = t.sections.about.learning.title;
-        if (aboutLearningContent) aboutLearningContent.textContent = t.sections.about.learning.content;
-        if (aboutInterestsTitle) aboutInterestsTitle.textContent = t.sections.about.interests.title;
-        if (aboutInterestsContent) aboutInterestsContent.textContent = t.sections.about.interests.content;
-
-        // Update expertise section
-        const expertiseTitle = document.querySelector('#especialidades .section-title');
-        if (expertiseTitle) expertiseTitle.textContent = t.sections.expertise.title;
-
-        // Update expertise cards
-        const expertiseCards = document.querySelectorAll('.expertise-card');
-        const expertiseTypes = ['qa', 'dev', 'security', 'education'];
-
-        expertiseCards.forEach((card, index) => {
-            const type = expertiseTypes[index];
-            if (!type) return;
-
-            // Update card title
-            const cardTitle = card.querySelector('h3');
-            if (cardTitle) {
-                cardTitle.textContent = t.sections.expertise.cards[type].title;
-            }
-
-            // Update card description
-            const cardDesc = card.querySelector('p');
-            if (cardDesc) {
-                cardDesc.textContent = t.sections.expertise.cards[type].content;
-            }
-
-            // Update expertise details/checks
-            const checks = card.querySelectorAll('.expertise-check span');
-            if (checks && t.sections.expertise.cards[type].details) {
-                checks.forEach((check, checkIndex) => {
-                    if (t.sections.expertise.cards[type].details[checkIndex]) {
-                        check.textContent = t.sections.expertise.cards[type].details[checkIndex];
-                    }
-                });
-            }
-        });
-
-        // Update projects section
-        const projectsTitle = document.querySelector('#proyectos .section-title');
-        if (projectsTitle) projectsTitle.textContent = t.sections.projects.title;
-
-        // AgroSoftWeb Project
-        const agroSoftWebTitle = document.querySelector('#proyectos .proyecto:nth-child(1) h4');
-        const agroSoftWebSubtitle = document.querySelector('#proyectos .proyecto:nth-child(1) h5');
-        const agroSoftWebDesc = document.querySelector('#proyectos .proyecto:nth-child(1) p');
-
-        if (agroSoftWebTitle) agroSoftWebTitle.textContent = t.sections.projects.agroSoftWeb.title;
-        if (agroSoftWebSubtitle) agroSoftWebSubtitle.textContent = t.sections.projects.agroSoftWeb.subtitle;
-        if (agroSoftWebDesc) agroSoftWebDesc.textContent = t.sections.projects.agroSoftWeb.description;
-
-        // AgroSoftDesktop Project
-        const agroSoftDesktopTitle = document.querySelector('#proyectos .proyecto:nth-child(2) h4');
-        const agroSoftDesktopSubtitle = document.querySelector('#proyectos .proyecto:nth-child(2) h5');
-        const agroSoftDesktopDesc = document.querySelector('#proyectos .proyecto:nth-child(2) p');
-
-        if (agroSoftDesktopTitle) agroSoftDesktopTitle.textContent = t.sections.projects.agroSoftDesktop.title;
-        if (agroSoftDesktopSubtitle) agroSoftDesktopSubtitle.textContent = t.sections.projects.agroSoftDesktop.subtitle;
-        if (agroSoftDesktopDesc) agroSoftDesktopDesc.textContent = t.sections.projects.agroSoftDesktop.description;
-
-        // Update contact section
-        const contactTitle = document.querySelector('#contacto .contact-title');
-        const contactTexts = document.querySelectorAll('#contacto .contact-text');
-
-        if (contactTitle) contactTitle.textContent = t.sections.contact.title;
-        if (contactTexts.length >= 2) {
-            contactTexts[0].textContent = t.sections.contact.subtitle;
-            contactTexts[1].textContent = t.sections.contact.callToAction;
-        }
-
-        // Update stats section
-        const statsElements = {
-            experience: document.querySelector('.stat-card:nth-child(1) .stat-label'),
-            testCoverage: document.querySelector('.stat-card:nth-child(2) .stat-label'),
-            bugReduction: document.querySelector('.stat-card:nth-child(3) .stat-label'),
-            qaEfficiency: document.querySelector('.stat-card:nth-child(4) .stat-label')
-        };
-
-        Object.entries(statsElements).forEach(([key, element]) => {
-            if (element) element.textContent = t.sections.stats[key];
-        });
-
-        // Update footer
-        const footerLogo = document.querySelector('.footer-logo');
-        const footerText = document.querySelector('.footer-text');
-
-        if (footerLogo) footerLogo.textContent = t.footer.company;
-        if (footerText) footerText.textContent = `© ${new Date().getFullYear()} ${t.footer.company}. ${t.footer.rights}`;
-
-    } catch (error) {
-        console.error('Error al cambiar el idioma:', error);
-    }
-}
 
 // Intersection Observer for fade-in animations
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
     });
-}, {
-    threshold: 0.1
-});
+}, { threshold: 0.1 });
 
-// Observe all sections and elements with fade-in class
-document.querySelectorAll('section, .fade-in').forEach(element => {
-    observer.observe(element);
-}); 
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
