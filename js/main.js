@@ -72,6 +72,11 @@ const translations = {
             },
             projects: {
                 title: 'Algunos proyectos realizados',
+                 enygmalab: {
+                    title: 'EnygmaLab',
+                    subtitle: 'Staff Augmentation & AI Solutions',
+                    description: 'Empresa nearshore que conecta compañías con ingenieros elite de LatAm (top 3%). Matching en 48h, alineación EST/PST y perfiles en Full Stack, Java/Backend y QA Engineering.'
+                },
                 agroSoftWeb: {
                     title: 'AgroSoftWeb',
                     subtitle: 'Sistema de Gestión Agrícola',
@@ -99,7 +104,7 @@ const translations = {
             language: 'Idioma cambiado a: Español'
         },
         footer: {
-            company: 'EnygmaLabs',
+            company: 'EnygmaLab',
             rights: 'Todos los derechos reservados.'
         }
     },
@@ -175,6 +180,11 @@ const translations = {
             },
             projects: {
                 title: 'Featured Projects',
+                enygmalab: {
+                    title: 'EnygmaLab',
+                    subtitle: 'Staff Augmentation & AI Solutions',
+                    description: 'A nearshore company that connects businesses with elite engineers from Latin America (top 3%). Matches within 48 hours, EST/PST time zone alignment, and profiles in Full Stack, Java/Backend, and QA Engineering.'
+                },
                 agroSoftWeb: {
                     title: 'AgroSoftWeb',
                     subtitle: 'Agricultural Management System',
@@ -202,7 +212,7 @@ const translations = {
             language: 'Language changed to: English'
         },
         footer: {
-            company: 'EnygmaLabs',
+            company: 'EnygmaLab',
             rights: 'All rights reserved.'
         }
     }
