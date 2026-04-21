@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Body Tracker · Anthony Barrera</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0d0d0d; --surface: #161616; --surface2: #1e1e1e;
+    --border: rgba(255,255,255,0.07);
+    --accent: #b5f09c; --accent-dim: rgba(181,240,156,0.12); --accent-dimmer: rgba(181,240,156,0.06);
+    --red: #ff6b6b; --red-dim: rgba(255,107,107,0.1);
+    --text: #f0f0f0; --muted: #666; --muted2: #444;
+    --mono: 'DM Mono', monospace; --sans: 'DM Sans', sans-serif; --radius: 10px;
+  }
+  body { background:var(--bg); color:var(--text); font-family:var(--sans); font-size:14px; min-height:100vh; padding:32px 24px 80px; max-width:960px; margin:0 auto; }
+
+  /* Loading */
+  #loadingState { display:flex; flex-direction:column; align-items:center; justify-content:center; height:60vh; gap:16px; }
+  .spinner { width:28px; height:28px; border:2px solid var(--border); border-top-color:var(--accent); border-radius:50%; animation:spin 0.7s linear infinite; }
+  @keyframes spin { to { transform:rotate(360deg); } }
+  #loadingState p { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); }
+  #errorState { display:none; padding:24px; background:var(--red-dim); border:1px solid rgba(255,107,107,0.2); border-radius:var(--radius); font-family:var(--mono); font-size:12px; color:var(--red); margin-top:40px; line-height:1.6; }
+  #mainContent { display:none; }
+
+  /* Header */
+  header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:40px; padding-bottom:24px; border-bottom:1px solid var(--border); }
+  .header-left h1 { font-family:var(--mono); font-size:11px; font-weight:400; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); margin-bottom:6px; }
+  .header-left p { font-size:26px; font-weight:300; color:var(--text); letter-spacing:-0.02em; }
+  .header-left p span { font-weight:500; }
+  .date-badge { font-family:var(--mono); font-size:10px; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; }
+
+  /* Section label */
+  .section-label { font-family:var(--mono); font-size:10px; font-weight:400; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-bottom:14px; margin-top:36px; }
+
+  /* KPI */
+  .kpi-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(140px,1fr)); gap:10px; }
+  .kpi-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:16px 16px 14px; transition:border-color 0.2s, background 0.2s; }
+  .kpi-card:hover { border-color:rgba(255,255,255,0.14); background:var(--surface2); }
+  .kpi-label { font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
+  .kpi-value { font-size:28px; font-weight:300; letter-spacing:-0.03em; color:var(--text); line-height:1; margin-bottom:8px; }
+  .kpi-unit { font-size:13px; color:var(--muted); font-weight:300; }
+  .kpi-delta { font-family:var(--mono); font-size:11px; display:inline-flex; align-items:center; gap:3px; padding:2px 7px; border-radius:4px; }
+  .kpi-delta.down { background:var(--accent-dim); color:var(--accent); }
+  .kpi-delta.up   { background:var(--red-dim); color:var(--red); }
+  .kpi-delta.neutral { background:rgba(255,255,255,0.05); color:var(--muted); }
+
+  /* Charts */
+  .chart-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  @media (max-width:640px) { .chart-grid { grid-template-columns:1fr; } }
+  .chart-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:20px; }
+  .chart-title { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:18px; }
+  .chart-wrap { position:relative; height:180px; width:100%; }
+  .chart-wrap canvas { position:absolute; inset:0; }
+
+  /* Table */
+  .data-table-wrap { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; }
+  table { width:100%; border-collapse:collapse; font-family:var(--mono); font-size:12px; }
+  thead th { background:var(--surface2); padding:11px 16px; text-align:right; font-weight:400; letter-spacing:0.08em; color:var(--muted); font-size:10px; text-transform:uppercase; border-bottom:1px solid var(--border); }
+  thead th:first-child { text-align:left; }
+  tbody td { padding:10px 16px; text-align:right; border-bottom:1px solid var(--border); color:var(--text); font-weight:300; }
+  tbody tr:last-child td { border-bottom:none; }
+  tbody td:first-child { text-align:left; color:var(--muted); font-size:11px; }
+  tbody td.positive { color:var(--accent); }
+  tbody td.negative { color:var(--red); }
+  tbody td.empty { color:var(--muted2); }
+
+  /* Topbar */
+  .topbar { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+  .btn-add { display:inline-flex; align-items:center; gap:7px; background:var(--accent-dimmer); border:1px solid rgba(181,240,156,0.2); color:var(--accent); font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; padding:9px 18px; border-radius:6px; cursor:pointer; transition:background 0.2s, border-color 0.2s; }
+  .btn-add:hover { background:rgba(181,240,156,0.16); border-color:rgba(181,240,156,0.35); }
+
+  /* Modal */
+  .modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); backdrop-filter:blur(4px); z-index:100; align-items:center; justify-content:center; }
+  .modal-overlay.open { display:flex; }
+  .modal { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:28px; width:380px; max-width:95vw; animation:modalIn 0.18s ease; }
+  @keyframes modalIn { from { opacity:0; transform:translateY(8px) scale(0.98); } to { opacity:1; transform:translateY(0) scale(1); } }
+  .modal h2 { font-family:var(--mono); font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); margin-bottom:20px; }
+  .modal .field { margin-bottom:14px; }
+  .modal label { display:block; font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+  .modal input[type=number], .modal input[type=month] { width:100%; background:var(--surface2); border:1px solid var(--border); border-radius:6px; color:var(--text); font-family:var(--mono); font-size:13px; padding:9px 12px; outline:none; transition:border-color 0.15s; }
+  .modal input:focus { border-color:rgba(181,240,156,0.4); }
+  .modal-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .modal-error { font-family:var(--mono); font-size:10px; color:var(--red); margin-top:12px; display:none; }
+  .modal-actions { display:flex; gap:10px; margin-top:22px; }
+  .btn-save { flex:1; background:var(--accent); color:#0d0d0d; border:none; border-radius:6px; font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; padding:10px; cursor:pointer; transition:opacity 0.15s; }
+  .btn-save:hover { opacity:0.85; }
+  .btn-save:disabled { opacity:0.5; cursor:not-allowed; }
+  .btn-cancel { flex:1; background:transparent; color:var(--muted); border:1px solid var(--border); border-radius:6px; font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; padding:10px; cursor:pointer; }
+  .btn-cancel:hover { color:var(--text); }
+
+  /* Toast */
+  .toast { position:fixed; bottom:28px; right:28px; background:var(--surface2); border:1px solid var(--border); border-radius:8px; padding:12px 18px; font-family:var(--mono); font-size:11px; letter-spacing:0.08em; color:var(--text); z-index:200; transform:translateY(12px); opacity:0; transition:all 0.22s ease; pointer-events:none; }
+  .toast.show { opacity:1; transform:translateY(0); }
+  .toast.success { border-color:rgba(181,240,156,0.3); color:var(--accent); }
+  .toast.error   { border-color:rgba(255,107,107,0.3); color:var(--red); }
+</style>
+</head>
+<body>
+
+<div id="loadingState">
+  <div class="spinner"></div>
+  <p>Conectando con Supabase...</p>
+</div>
+<div id="errorState"></div>
+
+<div id="mainContent">
+  <header>
+    <div class="header-left">
+      <h1>Body Tracker</h1>
+      <p><span>Anthony</span> Barrera</p>
+    </div>
+    <div class="header-right">
+      <div class="date-badge" id="lastUpdated"></div>
+    </div>
+  </header>
+
+  <div class="topbar">
+    <div class="section-label" style="margin:0">Métricas actuales</div>
+    <button class="btn-add" onclick="openModal()">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+        <path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      Agregar mes
+    </button>
+  </div>
+  <div class="kpi-grid" id="kpiGrid"></div>
+
+  <div class="section-label">Evolución</div>
+  <div class="chart-grid">
+    <div class="chart-card">
+      <div class="chart-title">Peso (lbs)</div>
+      <div class="chart-wrap"><canvas id="chartPeso" role="img" aria-label="Tendencia de peso en lbs"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Abdomen vs Cintura (cm)</div>
+      <div class="chart-wrap"><canvas id="chartCircunf" role="img" aria-label="Abdomen vs cintura en cm"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Composición extremidades (cm)</div>
+      <div class="chart-wrap"><canvas id="chartExtrem" role="img" aria-label="Bíceps, muslo y cuello en cm"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Variación acumulada desde inicio (%)</div>
+      <div class="chart-wrap"><canvas id="chartPct" role="img" aria-label="Variación porcentual acumulada"></canvas></div>
+    </div>
+  </div>
+
+  <div class="section-label">Historial completo</div>
+  <div class="data-table-wrap"><table id="histTable"></table></div>
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <h2>Nuevo registro</h2>
+    <div class="field">
+      <label>Mes</label>
+      <input type="month" id="inMonth">
+    </div>
+    <div class="modal-grid">
+      <div class="field"><label>Peso (lbs)</label><input type="number" id="inPeso" placeholder="302" step="0.1"></div>
+      <div class="field"><label>Cuello (cm)</label><input type="number" id="inCuello" placeholder="44" step="0.1"></div>
+      <div class="field"><label>Bíceps (cm)</label><input type="number" id="inBiceps" placeholder="39" step="0.1"></div>
+      <div class="field"><label>Cintura (cm)</label><input type="number" id="inCintura" placeholder="123" step="0.1"></div>
+      <div class="field"><label>Abdomen (cm)</label><input type="number" id="inAbdomen" placeholder="138" step="0.1"></div>
+      <div class="field"><label>Muslo (cm)</label><input type="number" id="inMuslo" placeholder="67" step="0.1"></div>
+    </div>
+    <div class="modal-error" id="modalError"></div>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal()">Cancelar</button>
+      <button class="btn-save" id="btnSave" onclick="saveEntry()">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const SUPABASE_URL = 'https://wpmuzqtbfyerganjngib.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndwbXV6cXRiZnllcmdhbmpuZ2liIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkzMzY5NTEsImV4cCI6MjA2NDkxMjk1MX0.bsHTXGWP6S5h-Ad0miRFYudXcTYTZm2uTPmmK_-irwE';
+const TABLE = 'body_tracker';
+const HDR = { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY, 'Content-Type': 'application/json', 'Prefer': 'return=representation' };
+
+const METRICS = [
+  { key:'peso',    label:'Peso',    unit:'lbs' },
+  { key:'cuello',  label:'Cuello',  unit:'cm'  },
+  { key:'biceps',  label:'Bíceps',  unit:'cm'  },
+  { key:'cintura', label:'Cintura', unit:'cm'  },
+  { key:'abdomen', label:'Abdomen', unit:'cm'  },
+  { key:'muslo',   label:'Muslo',   unit:'cm'  },
+];
+
+let entries = [];
+let charts  = {};
+
+async function dbFetch() {
+  const r = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=*&order=month.asc`, { headers: HDR });
+  if (!r.ok) throw new Error(`HTTP ${r.status}: ${await r.text()}`);
+  return r.json();
+}
+
+async function dbInsert(entry) {
+  const r = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}`, { method:'POST', headers: HDR, body: JSON.stringify(entry) });
+  if (!r.ok) throw new Error(`HTTP ${r.status}: ${await r.text()}`);
+  return r.json();
+}
+
+function monthLabel(iso) {
+  const [y, m] = iso.split('-');
+  return ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'][parseInt(m)-1] + ' ' + y;
+}
+
+async function init() {
+  try {
+    entries = await dbFetch();
+    document.getElementById('loadingState').style.display = 'none';
+    document.getElementById('mainContent').style.display  = 'block';
+    render();
+  } catch(e) {
+    document.getElementById('loadingState').style.display = 'none';
+    const el = document.getElementById('errorState');
+    el.style.display = 'block';
+    el.innerHTML = '<strong>Error conectando a Supabase</strong><br>' + e.message + '<br><br>Verifica que la tabla body_tracker existe y que RLS permite acceso público.';
+  }
+}
+
+function render() {
+  const sorted = [...entries].sort((a,b) => a.month.localeCompare(b.month));
+  const first = sorted[0], last = sorted[sorted.length-1];
+  const labels = sorted.map(e => e.label || monthLabel(e.month));
+
+  document.getElementById('lastUpdated').textContent = 'Último: ' + (last.label || monthLabel(last.month));
+
+  // KPIs
+  const grid = document.getElementById('kpiGrid');
+  grid.innerHTML = '';
+  METRICS.forEach(({ key, label, unit }) => {
+    const cur = last[key], base = first[key];
+    const diff = (cur != null && base != null) ? +(cur - base).toFixed(1) : null;
+    const cls  = diff == null ? 'neutral' : diff < 0 ? 'down' : diff > 0 ? 'up' : 'neutral';
+    const dTxt = diff != null ? `${diff < 0 ? '↓' : diff > 0 ? '↑' : '→'} ${Math.abs(diff)}` : '—';
+    grid.innerHTML += `<div class="kpi-card">
+      <div class="kpi-label">${label}</div>
+      <div class="kpi-value">${cur ?? '—'} <span class="kpi-unit">${unit}</span></div>
+      <div class="kpi-delta ${cls}">${dTxt}</div>
+    </div>`;
+  });
+
+  // Chart defaults
+  Chart.defaults.color = '#555';
+  Chart.defaults.borderColor = 'rgba(255,255,255,0.05)';
+  Chart.defaults.font.family = "'DM Mono', monospace";
+  Chart.defaults.font.size   = 10;
+
+  const baseOpts = {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid:{ color:'rgba(255,255,255,0.04)' }, ticks:{ color:'#555' } },
+      y: { grid:{ color:'rgba(255,255,255,0.04)' }, ticks:{ color:'#555' } }
+    },
+    elements: { point:{ radius:4, hoverRadius:6 } }
+  };
+
+  function ds(data, color, label) {
+    return { label, data, borderColor:color, backgroundColor:color+'18', borderWidth:2, tension:0.35, fill:true, pointBackgroundColor:color, pointBorderColor:color };
+  }
+
+  function mkChart(id, datasets, legend) {
+    if (charts[id]) charts[id].destroy();
+    const opts = JSON.parse(JSON.stringify(baseOpts));
+    if (legend) opts.plugins.legend = { display:true, labels:{ color:'#666', boxWidth:10, font:{ size:10 } } };
+    charts[id] = new Chart(document.getElementById(id), { type:'line', data:{ labels, datasets }, options:opts });
+  }
+
+  mkChart('chartPeso',   [ds(sorted.map(e=>e.peso), '#b5f09c', 'Peso')]);
+  mkChart('chartCircunf',[ds(sorted.map(e=>e.abdomen),'#ff6b6b','Abdomen'), ds(sorted.map(e=>e.cintura),'#7eb8f7','Cintura')], true);
+  mkChart('chartExtrem', [ds(sorted.map(e=>e.biceps),'#f9c74f','Bíceps'), ds(sorted.map(e=>e.muslo),'#c77dff','Muslo'), ds(sorted.map(e=>e.cuello),'#555','Cuello')], true);
+  mkChart('chartPct', METRICS.map(({key,label},i) => {
+    const colors=['#b5f09c','#7eb8f7','#f9c74f','#ff6b6b','#c77dff','#555'];
+    return ds(sorted.map(e => e[key]!=null&&first[key]!=null ? +((e[key]-first[key])/first[key]*100).toFixed(1) : null), colors[i], label);
+  }), true);
+
+  // Table
+  const thCols = sorted.map(e=>`<th>${e.label||monthLabel(e.month)}</th>`).join('');
+  let html = `<thead><tr><th>Medida</th>${thCols}<th>Δ Total</th></tr></thead><tbody>`;
+  METRICS.forEach(({key,label,unit}) => {
+    const vals = sorted.map(e=>e[key]);
+    const delta = vals[vals.length-1]!=null&&vals[0]!=null ? +(vals[vals.length-1]-vals[0]).toFixed(1) : null;
+    const dCls = delta==null?'': delta<0?'positive': delta>0?'negative':'';
+    const dTxt = delta!=null ? (delta>0?'+':'')+delta+' '+unit : '—';
+    const cells = vals.map((v,i)=>{
+      if(v==null) return `<td class="empty">—</td>`;
+      if(i===0)   return `<td>${v}</td>`;
+      const d=+(v-vals[i-1]).toFixed(1);
+      return `<td class="${d<0?'positive':d>0?'negative':''}">${v}</td>`;
+    }).join('');
+    html += `<tr><td>${label} (${unit})</td>${cells}<td class="${dCls}">${dTxt}</td></tr>`;
+  });
+  document.getElementById('histTable').innerHTML = html + '</tbody>';
+}
+
+function openModal() {
+  const sorted = [...entries].sort((a,b)=>a.month.localeCompare(b.month));
+  if (sorted.length) {
+    const [y,m] = sorted[sorted.length-1].month.split('-').map(Number);
+    document.getElementById('inMonth').value = m===12 ? `${y+1}-01` : `${y}-${String(m+1).padStart(2,'0')}`;
+  }
+  document.getElementById('modalError').style.display = 'none';
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  ['inPeso','inCuello','inBiceps','inCintura','inAbdomen','inMuslo'].forEach(id => document.getElementById(id).value='');
+}
+
+async function saveEntry() {
+  const month = document.getElementById('inMonth').value;
+  if (!month) { showModalErr('Selecciona un mes.'); return; }
+  if (entries.find(e=>e.month===month)) { showModalErr('Ya existe un registro para ese mes.'); return; }
+
+  const entry = {
+    month, label: monthLabel(month),
+    peso:    parseFloat(document.getElementById('inPeso').value)    || null,
+    cuello:  parseFloat(document.getElementById('inCuello').value)  || null,
+    biceps:  parseFloat(document.getElementById('inBiceps').value)  || null,
+    cintura: parseFloat(document.getElementById('inCintura').value) || null,
+    abdomen: parseFloat(document.getElementById('inAbdomen').value) || null,
+    muslo:   parseFloat(document.getElementById('inMuslo').value)   || null,
+  };
+
+  const btn = document.getElementById('btnSave');
+  btn.disabled = true; btn.textContent = 'Guardando...';
+  try {
+    const res = await dbInsert(entry);
+    entries.push(Array.isArray(res) ? res[0] : entry);
+    closeModal(); render();
+    showToast('Registro guardado ✓', 'success');
+  } catch(e) {
+    showModalErr('Error: ' + e.message);
+  } finally {
+    btn.disabled = false; btn.textContent = 'Guardar';
+  }
+}
+
+function showModalErr(msg) {
+  const el = document.getElementById('modalError');
+  el.textContent = msg; el.style.display = 'block';
+}
+
+function showToast(msg, type='') {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.className = 'toast '+type+' show';
+  setTimeout(()=>{ t.className='toast '+type; }, 2800);
+}
+
+document.getElementById('modalOverlay').addEventListener('click', e => { if(e.target===e.currentTarget) closeModal(); });
+
+init();
+</script>
+</body>
+</html>
